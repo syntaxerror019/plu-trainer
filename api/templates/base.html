@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>PLU Trainer Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <a class="logo" href="/">PLU Trainer Page</a>
+        <div class="url">
+            <a href="/">Practice</a> | 
+            <a href="/docs">Cheat Sheet</a> | 
+            <a href="https://www.mileshilliard.com/">About</a>
+        </div>
+    </header>
+    {% block content %}{% endblock %}
+    <footer>
+        &copy; 2025 <a href="https://www.mileshilliard.com">Miles Hilliard</a>
+    </footer>   
+</body>
+</html>

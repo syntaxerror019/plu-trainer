@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Grocery Store Clerk PLU Code Training</h1>
+    <p>Welcome to the PLU trainer application. Use the practice page to practice PLU codes to help memorize them and improve your accuracy as a clerk at most grocery stores.</p>
+    <p>Please note that store-specific PLU codes may not be included in this application- treat this as a helper to learn generic codes.</p>
+    <p>To start, check out the <a href="/docs">Cheat Sheet</a>, or start one of the following practice sessions:</p>
+    <ul>
+        <li><a href="/practice/plu/code">PLU Code Practice</a> - Practice identifying items based on their PLU codes.</li>
+        <li><a style="pointer-events: none;" href="/practice/plu/image">PLU Image Practice</a> - Practice identifying PLU codes based on item images. <b>(Coming Soon)</b></li>
+        <li><a style="pointer-events: none;" href="/practice/match">PLU Matching Game</a> - Match items to their correct PLU codes in a fun game format. <b>(Coming Soon)</b></li>
+    </ul>
+</div>
+
+<div class="container">
+    <h2>About This Application</h2>
+    <p>This project is <b><a href="https://github.com/syntaxerror019/plu-trainer">Open Source</a></b> and was created by Miles Hilliard. For more information about the developer, visit <a href="https://www.mileshilliard.com/">the website</a>.</p>
+    <p>The database used in this application is from <a href="https://www.ifpsglobal.com">The International Federation for Produce Standards (IFPS)</a></p>
+    <sub>-> Last Updated: 11/28/2025 (DB Updated: 11/28/2025)</sub>
+    <br>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>PLU Code Practice Session</h1>
+    <p>Choose the correct item for the following PLU code:</p>
+</div>
+
+<div class="container">
+    <form method="POST">
+        <p><b>{{ name }}</b></p>
+        {% for code in options %}
+        <label>
+            <input type="radio" name="plu_code" value="{{ code }}" required>
+            {{ code }}
+        </label><br>
+        {% endfor %}
+        <input type="hidden" name="correct_plu" value="{{ correct }}">
+        <input type="hidden" name="name" value="{{ name }}">
+        <input type="hidden" name="options" value="{% for code in options %}{{ code }}{% if not loop.last %},{% endif %}{% endfor %}">
+        <br>
+        <input type="submit" value="Submit">
+        <button type="button" onclick="window.location.reload();">New Question</button>
+    </form>
+</div>
+
+{% if previous_options and previous_correct_code %}
+<div class="container">
+    <form method="POST">
+        <p>Previous Question:</p>
+        <p><b>{{ previous_name }}</b></p>
+        {% for code in previous_options %}
+        <label>
+            {% if code == previous_correct_code %}
+                <input type="radio" name="plu_code" value="{{ code }}" class="correct" checked>
+            {% else %}
+                <input type="radio" name="plu_code" value="{{ code }}" class="incorrect">
+            {% endif %}
+            {{ code }}
+        </label><br>
+        {% endfor %}
+        {% if iscorrect is not none %}
+            {% if iscorrect %}
+                <p style="color: green;">Correct!</p>
+            {% else %}
+                <p style="color: red;">Incorrect. The correct code was: {{ previous_correct_code }}</p>
+            {% endif %}
+        {% endif %}
+    </form>
+</div>
+{% endif %}
+{% endblock %}
