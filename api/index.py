@@ -46,7 +46,7 @@ def docs():
 
 def load_commodities():
     commodities = []
-    with open('./commodities.csv', newline='') as csvfile:
+    with open('api/commodities.csv', newline='') as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
             commodities.append(row)
